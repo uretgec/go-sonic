@@ -100,17 +100,10 @@ func main() {
 	sonicSearch3 := sonic.NewClient(&sonic.Options{
 		Addr:         "localhost:1491",
 		AuthPassword: "SecretPassword",
-		ChannelMode:  sonic.ChannelSearch,
+		ChannelMode:  sonic.ChannelControl,
 	})
 
-	results, err = sonicSearch3.Suggest(ctx, "collection", "bucket", "gerek", 10).Slice()
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Printf("Results: %v\n", results)
-
-	results, err = sonicSearch3.Info(ctx).Slice()
+	results, err = sonicSearch3.Info(ctx).Result()
 	if err != nil {
 		panic(err)
 	}
