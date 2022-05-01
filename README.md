@@ -8,7 +8,7 @@ For usage example go to examples folder
 
 
 NOTE:
-> This is dirty code package and do not use production
+> This is dirty code package and do not use in production
 
 ## Example Use
 
