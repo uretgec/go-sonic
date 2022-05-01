@@ -59,7 +59,7 @@ func main() {
 	fmt.Printf("Results: %v\n", results)
 
 	// SEARCH MODE ----------------------------------------
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 2; i++ {
 		time.Sleep(10 * time.Second)
 
 		sonicSearch2 := sonic.NewClient(&sonic.Options{
@@ -110,14 +110,14 @@ func main() {
 
 	fmt.Printf("Results: %v\n", results)
 
-	results, err = sonicSearch.Info(ctx).Slice()
+	results, err = sonicSearch3.Info(ctx).Slice()
 	if err != nil {
 		panic(err)
 	}
 
 	fmt.Printf("Results: %v\n", results)
 
-	results, err = sonicSearch.Trigger(ctx, sonic.TriggerActionConsolidate, "").Bool()
+	results, err = sonicSearch3.Trigger(ctx, sonic.TriggerActionConsolidate, "").Bool()
 	if err != nil {
 		panic(err)
 	}
