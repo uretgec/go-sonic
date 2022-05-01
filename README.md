@@ -10,6 +10,35 @@ For usage example go to examples folder
 NOTE:
 > This is dirty code package and do not use production
 
+## Example Use
+
+```
+ctx := context.Background()
+
+option := &sonic.Options{
+    Addr:         "localhost:1491",
+    AuthPassword: "SecretPassword",
+    ChannelMode:  sonic.ChannelSearch,
+    PoolSize:     1000,
+    MinIdleConns: 2,
+    MaxRetries:   2,
+}
+sonicSearch := sonic.NewClient(option)
+results, err := sonicSearch.Query(ctx.Context(), "collection", "bucket", "term:id", 10, 0, sonic.LangTur).Slice()
+if err != nil {
+    panic(err)
+}
+
+fmt.Printf("Results: %v\n", results)
+
+err = sonicSearch.Quit(ctx).Err()
+if err != nil {
+    panic(err)
+}
+
+fmt.Println("bye bye")
+```
+
 ## Install
 
 ```
