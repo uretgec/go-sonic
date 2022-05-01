@@ -1,8 +1,11 @@
 # Go Client For Sonic Search
 
 This package contains all commands at Sonic Protocol Docs (https://github.com/valeriansaliou/sonic/blob/master/PROTOCOL.md)
+
 Same Conn Pool and Commands infrastructure used one-to-one: (https://github.com/go-redis/redis)
+
 For usage example go to examples folder
+
 
 NOTE:
 > This is dirty code package and do not use production
